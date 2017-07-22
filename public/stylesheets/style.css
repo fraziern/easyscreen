@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: rgb(140, 153, 240);
+  height: 100%;
+}
+
+.container {
+  margin: 0 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-container {
+  flex: 0 1 auto;
+  display: inline-block;
+}
+
+.message-container > h2 {
+  font-size: 200px;
+  text-align: center;
+  text-transform: capitalize;
+  color: black;
+}
+
+.form--send {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.form--send__input {
+  width: 100%;
+}
+
+.message-list {
+  list-style: none;
+}
+
+.message-list li {
+  padding: 5px 10px;
+}
