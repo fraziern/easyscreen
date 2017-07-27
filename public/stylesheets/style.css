@@ -13,7 +13,7 @@ body {
   height: 100%;
 }
 
-.container {
+.display-top-container {
   margin: 0 50px;
   height: 100%;
   display: flex;
@@ -24,23 +24,34 @@ body {
 .message-container {
   flex: 0 1 auto;
   display: inline-block;
+  width: 95%;
 }
 
 .message-container > h2 {
   font-size: 200px;
+  font-size: 30vw;
   text-align: center;
   text-transform: capitalize;
   color: black;
 }
 
+/*client CSS*/
+
+.send-top-container {
+  font-size: 42px;
+  display: flex;
+}
+
 .form--send {
   position: fixed;
-  bottom: 0;
-  width: 100%;
+  bottom: 15px;
+  left: 15px;
 }
 
 .form--send__input {
   width: 100%;
+  height: 70px;
+  font-size: inherit;
 }
 
 .message-list {
@@ -49,4 +60,5 @@ body {
 
 .message-list li {
   padding: 5px 10px;
+  cursor: pointer;
 }

@@ -7,6 +7,7 @@
 var app = require('./app');
 var debug = require('debug')('easyscreen:server');
 var http = require('http');
+var sanitizeHtml = require('sanitize-html');
 
 /**
  * Get port from environment and store in Express.
@@ -27,8 +28,12 @@ var io = require('socket.io')(server);
 
 io.on('connection', function(socket) {
   socket.on('message', function(msg) {
-    console.log('message: ' + msg);
-    io.emit('message', msg);
+    const cleanMsg = sanitizeHtml(msg, {
+      allowedTags: [],
+      allowedAttributes: []
+    });
+    console.log('message: ' + cleanMsg);
+    io.emit('message', cleanMsg);
   });
 });
 
