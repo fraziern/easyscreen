@@ -1,31 +1,37 @@
 #!/usr/bin/env node
+// TODO: modularize this more, see https://stackoverflow.com/questions/24609991/using-socket-io-in-express-4-and-express-generators-bin-www
 
 /**
  * Module dependencies.
  */
+var sanitizeHtml = require('sanitize-html'); // TODO: do we still need?
+const mongoose = require('mongoose');
+
+// import environmental variables from our variables.env file
+require('dotenv').config();
+
+// Connect to our Database and handle an bad connections
+mongoose.connect(process.env.DATABASE);
+mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
+mongoose.connection.on('error', err => {
+  console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
+});
+
+// import all of our models e.g.:
+// require('./models/Store');
+require('./models/User');
+
+// Start our app! (we have to require app after declaring mongoose models)
 
 var app = require('./app');
-var debug = require('debug')('easyscreen:server');
-var http = require('http');
-var sanitizeHtml = require('sanitize-html');
+app.set('port', process.env.PORT || 3000);
+const server = app.listen(app.get('port'), () => {
+  console.log(`Express running → PORT ${server.address().port}`);
+});
 
-/**
- * Get port from environment and store in Express.
- */
-
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
-
-/**
- * Create HTTP server.
- */
-
-var server = http.createServer(app);
-
-// Socket.IO
+// add us a socket.io connection
 
 var io = require('socket.io')(server);
-
 io.on('connection', function(socket) {
   socket.on('message', function(msg) {
     const cleanMsg = sanitizeHtml(msg, {
@@ -36,67 +42,3 @@ io.on('connection', function(socket) {
     io.emit('message', cleanMsg);
   });
 });
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
-
-/**
- * Normalize a port into a number, string, or false.
- */
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
-
-/**
- * Event listener for HTTP server "error" event.
- */
-
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-  case 'EACCES':
-    console.error(bind + ' requires elevated privileges');
-    process.exit(1);
-    break;
-  case 'EADDRINUSE':
-    console.error(bind + ' is already in use');
-    process.exit(1);
-    break;
-  default:
-    throw error;
-  }
-}
-
-/**
- * Event listener for HTTP server "listening" event.
- */
-
-function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-}
