@@ -16,12 +16,20 @@ body {
 .display-top-container {
   margin: 0 50px;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .message-container {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
   flex: 0 1 auto;
   display: inline-block;
   width: 95%;
@@ -39,6 +47,8 @@ body {
 
 .send-top-container {
   font-size: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
