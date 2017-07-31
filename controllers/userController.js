@@ -3,7 +3,11 @@ const User = mongoose.model('User');
 const promisify = require('es6-promisify');
 
 exports.loginForm = (req, res) => {
-  res.render('login', { title: 'Login' });
+  if (req.isAuthenticated()) {
+    res.redirect('/' + req.user.shortname);
+  } else {
+    res.render('login', { title: 'Login' });
+  }
 };
 
 exports.registerForm = (req, res) => {

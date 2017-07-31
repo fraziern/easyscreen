@@ -1,10 +1,6 @@
 extends layout
 
 block content
-  .display-top-container
-    .message-container
-      h2#message
-
-block scripts
-  script(src="/socket.io/socket.io.js")
-  script(src="/javascripts/display.js")
+  .welcome-block
+    h2 Remote real-time closed captioning
+    a(href="/login"): button.button Log In
