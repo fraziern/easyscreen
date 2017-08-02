@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const promisify = require('es6-promisify');
 const flash = require('connect-flash');
+const sassMiddleware = require('node-sass-middleware');
 const errorHandlers = require('./handlers/errorHandlers');
 const helpers = require('./helpers');
 require('./handlers/passport');
@@ -28,6 +29,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // populates req.cookies with any cookies that came along with the request
 app.use(cookieParser());
+
+// Sass compiler
+app.use(
+  sassMiddleware({
+    src: path.join(__dirname, 'public/sass'),
+    dest: path.join(__dirname, 'public/css'),
+    debug: true,
+    prefix: '/css'
+  })
+);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Sessions allow us to store data on visitors from request to request

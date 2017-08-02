@@ -1,10 +1,10 @@
 extends layout
 
 block content
-  .send-top-container
+  .inner
     ul.message-list#message-list
-    form.form--send(action="")
-      input.form--send__input#txt(type="text" name="message" placeholder="Type a message..." autofocus)
+    form.form-send(action="")
+      input.form-send__input#txt(type="text" name="message" placeholder="Type a message..." autofocus)
 
 
 block scripts

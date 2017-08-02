@@ -1,8 +1,11 @@
 mixin loginForm()
-  form.form(action="/login" method="POST")
-    h2 Login
-      label(for="email") Email Address
-      input(type="email" name="email")
-      label(for="password") Password
-      input(type="password" name="password")
-      input.button(type="submit" value="Log In")
+  .login-container
+    .login-top
+      h2 Login
+      .icon-circle
+        i.fa.fa-lock.fa-3x
+    .login-bottom
+      form.form(action="/login" method="POST")
+        input(type="email" name="email" placeholder="Email Address")
+        input(type="password" name="password" placeholder="Password")
+        input.button(type="submit" value="Log In")

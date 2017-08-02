@@ -1,6 +1,6 @@
 var socket = io();
 
-var form = document.getElementsByClassName('form--send')[0];
+var form = document.getElementsByClassName('form-send')[0];
 var txt = document.getElementById('txt');
 var msgList = document.getElementById('message-list');
 
@@ -10,7 +10,11 @@ form.addEventListener('submit', function(e) {
 
   // add to list of messages
   let li = document.createElement('li');
-  li.textContent = txt.value;
+  let li_div = document.createElement('div');
+  li.appendChild(li_div);
+
+  li_div.textContent = txt.value;
+  li_div.classList.add('li--shrink');
 
   li.addEventListener('click', function(e) {
     e.preventDefault();

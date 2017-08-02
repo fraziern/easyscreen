@@ -2,12 +2,12 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/css/styles.css')
     meta(name="viewport" content="width=device-width, initial-scale=1")
   body
     block messages
       if locals.flashes
-        .inner
+        .inner.center
           .flash-messages
             - const categories = Object.keys(locals.flashes)
             each category in categories
