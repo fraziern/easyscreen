@@ -1,0 +1,61 @@
+/* Login form */
+
+.login-container {
+  flex: 0 1 auto;
+  width: 320px;
+}
+
+.login-top {
+  position: relative;
+  width: 100px;
+  left: 110px;
+  top: 120px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 10px;
+    color: white;
+  }
+}
+
+.icon-circle {
+  background: white;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 25px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.login-bottom {
+  border: 1px $darkpurple solid;
+  border-top: 150px $darkpurple solid;
+  background: white;
+  padding: 50px;
+}
+
+.form {
+  display: block;
+}
+.form label {
+  display: block;
+}
+.form input {
+  display: block;
+  width: 220px;
+  border-radius: 2px;
+  height: 25px;
+  border: none;
+  margin-bottom: 10px;
+}
+.form input[type="email"],
+.form input[type="password"] {
+  padding-left: 10px;
+  background: #f5f5ed;
+}
+.form input[type="submit"] {
+  background: $darkpurple;
+  color: white;
+  cursor: pointer;
+}

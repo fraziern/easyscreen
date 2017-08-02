@@ -1,0 +1,14 @@
+.message-container {
+  display: block;
+  width: 95%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.message-container > h2 {
+  font-size: 200px;
+  font-size: 30vw;
+  text-align: center;
+  color: black;
+}
