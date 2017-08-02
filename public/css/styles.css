@@ -462,66 +462,6 @@ template {
   .flash p {
     margin: 0; }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-html {
-  height: 100%; }
-
-body {
-  font-family: Helvetica, Arial, sans-serif;
-  background: #8c99f0;
-  height: 100%;
-  font-size: 16px; }
-
-.inner {
-  margin: 0 50px;
-  display: flex; }
-
-.center {
-  justify-content: center; }
-
-.message-container {
-  display: inline-block;
-  width: 95%; }
-
-.message-container > h2 {
-  font-size: 200px;
-  font-size: 30vw;
-  text-align: center;
-  text-transform: capitalize;
-  color: black; }
-
-button {
-  width: 25px;
-  background: gray; }
-
-/*client CSS*/
-.form-send {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 15px 50px;
-  font-size: 24px; }
-  .form-send__input {
-    width: 100%;
-    height: 70px;
-    padding-left: 10px;
-    font-size: inherit; }
-
-.message-list {
-  list-style: none;
-  font-size: 24px; }
-  .message-list .li--shrink {
-    background: #f5f492;
-    padding: 5px 10px;
-    margin-bottom: 5px;
-    cursor: pointer;
-    float: left; }
-
 /* Login form */
 .login-container {
   flex: 0 1 auto;
@@ -533,10 +473,9 @@ button {
   left: 110px;
   top: 120px;
   text-align: center; }
-
-.login-top h2 {
-  margin-bottom: 10px;
-  color: white; }
+  .login-top h2 {
+    margin-bottom: 10px;
+    color: white; }
 
 .icon-circle {
   background: white;
@@ -576,3 +515,67 @@ button {
   background: #5d4660;
   color: white;
   cursor: pointer; }
+
+/*client CSS*/
+.form-send {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 15px 50px;
+  font-size: 24px; }
+  .form-send__input {
+    width: 100%;
+    height: 70px;
+    padding-left: 10px;
+    font-size: inherit; }
+
+.message-list {
+  list-style: none;
+  font-size: 24px; }
+  .message-list .li--shrink {
+    background: #f5f492;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: inline-block; }
+
+.message-container {
+  display: block;
+  width: 95%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.message-container > h2 {
+  font-size: 200px;
+  font-size: 30vw;
+  text-align: center;
+  color: black; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  height: 100%; }
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #8c99f0;
+  height: 100%;
+  font-size: 16px; }
+
+.inner {
+  margin: 0 50px;
+  display: flex; }
+
+.center {
+  justify-content: center; }
+
+button {
+  width: 25px;
+  background: gray; }
+
+li {
+  margin-bottom: 5px; }
