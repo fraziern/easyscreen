@@ -3,9 +3,12 @@ mixin loginForm()
     .login-top
       h2 Login
       .icon-circle
-        i.fa.fa-lock.fa-3x
+        i.fa.fa-lock.fa-2x
     .login-bottom
       form.form(action="/login" method="POST")
         input(type="email" name="email" placeholder="Email Address")
         input(type="password" name="password" placeholder="Password")
         input.button(type="submit" value="Log In")
+    .login-links
+      p No account? a(href="#"): Sign up
+      p Forgot password? a(href="#"): Click here.

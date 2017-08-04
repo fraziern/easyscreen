@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster|Roboto|Zilla+Slab+Highlight");
 html {
   box-sizing: border-box; }
 
@@ -465,30 +466,33 @@ template {
 /* Login form */
 .login-container {
   flex: 0 1 auto;
-  width: 320px; }
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px; }
 
 .login-top {
-  position: relative;
-  width: 100px;
-  left: 110px;
-  top: 120px;
-  text-align: center; }
+  width: 320px;
+  height: 120px;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffc578 0%, #fb9d23 100%);
+  padding-top: 20px; }
   .login-top h2 {
     margin-bottom: 10px;
-    color: white; }
+    color: white;
+    font-family: 'Roboto';
+    font-size: 30px; }
 
 .icon-circle {
   background: white;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 20px;
   margin: 0 auto;
   padding: 5px; }
 
 .login-bottom {
-  border: 1px #5d4660 solid;
-  border-top: 150px #5d4660 solid;
   background: white;
   padding: 50px; }
 
@@ -496,7 +500,8 @@ template {
   display: block; }
 
 .form label {
-  display: block; }
+  display: block;
+  font-family: 'Roboto'; }
 
 .form input {
   display: block;
@@ -504,17 +509,20 @@ template {
   border-radius: 2px;
   height: 25px;
   border: none;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-family: 'Roboto'; }
 
 .form input[type="email"],
 .form input[type="password"] {
   padding-left: 10px;
-  background: #f5f5ed; }
+  background: #f5f5ed;
+  font-family: 'Roboto'; }
 
 .form input[type="submit"] {
-  background: #5d4660;
+  background: #fb9d23;
   color: white;
-  cursor: pointer; }
+  cursor: pointer;
+  font-family: 'Roboto'; }
 
 /*client CSS*/
 .form-send {
@@ -561,7 +569,7 @@ html {
   height: 100%; }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   background: #8c99f0;
   height: 100%;
   font-size: 16px; }
@@ -573,9 +581,48 @@ body {
 .center {
   justify-content: center; }
 
+.full-height {
+  height: 100%; }
+
+.vertical-stack {
+  flex-direction: column; }
+
 button {
-  width: 25px;
-  background: gray; }
+  background: gray;
+  border: none;
+  padding: 5px;
+  font-family: 'Roboto'; }
 
 li {
   margin-bottom: 5px; }
+
+.pen-hand-bg {
+  background: url("../images/marker-hand.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #dcb4a6; }
+
+.welcome-block {
+  text-align: center;
+  margin-top: 80px; }
+  .welcome-block h1 {
+    font-size: 70px;
+    font-family: 'Lobster', cursive;
+    margin-bottom: .33em; }
+  .welcome-block h2 {
+    font-size: 20px;
+    font-family: 'Zilla Slab Highlight', cursive; }
+
+.welcome-button-block {
+  text-align: center;
+  margin-top: 70px; }
+  .welcome-button-block .button {
+    background-color: #eb1120;
+    color: #f5f0e1;
+    padding: 7px;
+    cursor: pointer;
+    transition: all .2s ease-in-out; }
+    .welcome-button-block .button:hover {
+      transform: scale(1.1); }

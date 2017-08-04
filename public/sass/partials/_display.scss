@@ -1,6 +1,8 @@
 .message-container {
   display: block;
   width: 95%;
+
+  // center vertically
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

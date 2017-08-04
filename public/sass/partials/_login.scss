@@ -3,34 +3,42 @@
 .login-container {
   flex: 0 1 auto;
   width: 320px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
 }
 
 .login-top {
-  position: relative;
-  width: 100px;
-  left: 110px;
-  top: 120px;
+  // position: relative;
+  width: 320px;
+  // left: 110px;
+  // top: 120px;
+  height: 120px;
   text-align: center;
+  background: linear-gradient(to bottom, #ffc578 0%, #fb9d23 100%);
+  padding-top: 20px;
 
   h2 {
     margin-bottom: 10px;
     color: white;
+    font-family: 'Roboto';
+    font-size: 30px;
   }
 }
 
 .icon-circle {
   background: white;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 20px;
   margin: 0 auto;
   padding: 5px;
 }
 
 .login-bottom {
-  border: 1px $darkpurple solid;
-  border-top: 150px $darkpurple solid;
+  // border: 1px $darkpurple solid;
+  // border-top: 150px $darkpurple solid;
   background: white;
   padding: 50px;
 }
@@ -40,6 +48,7 @@
 }
 .form label {
   display: block;
+  font-family: 'Roboto';
 }
 .form input {
   display: block;
@@ -48,14 +57,17 @@
   height: 25px;
   border: none;
   margin-bottom: 10px;
+  font-family: 'Roboto';
 }
 .form input[type="email"],
 .form input[type="password"] {
   padding-left: 10px;
   background: #f5f5ed;
+  font-family: 'Roboto';
 }
 .form input[type="submit"] {
-  background: $darkpurple;
+  background: #fb9d23;
   color: white;
   cursor: pointer;
+  font-family: 'Roboto';
 }
