@@ -6,5 +6,7 @@ block content
       h2#message
 
 block scripts
+  script.
+    _uid="#{uid}";
   script(src="/socket.io/socket.io.js")
   script(src="/javascripts/display.js")

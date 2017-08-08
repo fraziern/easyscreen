@@ -4,7 +4,6 @@
 /**
  * Module dependencies.
  */
-var sanitizeHtml = require('sanitize-html'); // TODO: do we still need?
 const mongoose = require('mongoose');
 
 // import environmental variables from our variables.env file
@@ -29,16 +28,5 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Express running → PORT ${server.address().port}`);
 });
 
-// add us a socket.io connection
-
-var io = require('socket.io')(server);
-io.on('connection', function(socket) {
-  socket.on('message', function(msg) {
-    const cleanMsg = sanitizeHtml(msg, {
-      allowedTags: [],
-      allowedAttributes: []
-    });
-    console.log('message: ' + cleanMsg);
-    io.emit('message', cleanMsg);
-  });
-});
+// add us a socket.io handler
+require('./handlers/sockets')(server);

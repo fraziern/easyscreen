@@ -509,13 +509,13 @@ template {
   border-radius: 2px;
   height: 25px;
   border: none;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-family: 'Roboto'; }
 
 .form input[type="email"],
 .form input[type="password"] {
   padding-left: 10px;
-  background: #f5f5ed;
+  background: #e7e7df;
   font-family: 'Roboto'; }
 
 .form input[type="submit"] {
@@ -523,6 +523,12 @@ template {
   color: white;
   cursor: pointer;
   font-family: 'Roboto'; }
+
+.login-links {
+  font-size: 14px;
+  color: gray; }
+  .login-links a {
+    color: #fb9d23; }
 
 /*client CSS*/
 .form-send {
@@ -560,6 +566,37 @@ template {
   text-align: center;
   color: black; }
 
+.pen-hand-bg {
+  background: url("../images/marker-hand.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #dcb4a6; }
+
+.welcome-block {
+  text-align: center;
+  margin-top: 80px; }
+  .welcome-block h1 {
+    font-size: 70px;
+    font-family: 'Lobster', cursive;
+    margin-bottom: .33em; }
+  .welcome-block h2 {
+    font-size: 20px;
+    font-family: 'Zilla Slab Highlight', cursive; }
+
+.welcome-button-block {
+  text-align: center;
+  margin-top: 70px; }
+  .welcome-button-block .button {
+    background-color: #eb1120;
+    color: #f5f0e1;
+    padding: 7px;
+    cursor: pointer;
+    transition: all .2s ease-in-out; }
+    .welcome-button-block .button:hover {
+      transform: scale(1.1); }
+
 * {
   margin: 0;
   padding: 0;
@@ -595,34 +632,3 @@ button {
 
 li {
   margin-bottom: 5px; }
-
-.pen-hand-bg {
-  background: url("../images/marker-hand.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color: #dcb4a6; }
-
-.welcome-block {
-  text-align: center;
-  margin-top: 80px; }
-  .welcome-block h1 {
-    font-size: 70px;
-    font-family: 'Lobster', cursive;
-    margin-bottom: .33em; }
-  .welcome-block h2 {
-    font-size: 20px;
-    font-family: 'Zilla Slab Highlight', cursive; }
-
-.welcome-button-block {
-  text-align: center;
-  margin-top: 70px; }
-  .welcome-button-block .button {
-    background-color: #eb1120;
-    color: #f5f0e1;
-    padding: 7px;
-    cursor: pointer;
-    transition: all .2s ease-in-out; }
-    .welcome-button-block .button:hover {
-      transform: scale(1.1); }

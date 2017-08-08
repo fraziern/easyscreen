@@ -56,13 +56,13 @@
   border-radius: 2px;
   height: 25px;
   border: none;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-family: 'Roboto';
 }
 .form input[type="email"],
 .form input[type="password"] {
   padding-left: 10px;
-  background: #f5f5ed;
+  background: #e7e7df;
   font-family: 'Roboto';
 }
 .form input[type="submit"] {
@@ -70,4 +70,13 @@
   color: white;
   cursor: pointer;
   font-family: 'Roboto';
+}
+
+.login-links {
+  font-size: 14px;
+  color: gray;
+
+  a {
+    color: #fb9d23;
+  }
 }

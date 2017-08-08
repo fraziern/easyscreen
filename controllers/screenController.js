@@ -5,9 +5,9 @@ exports.landing = (req, res) => {
 };
 
 exports.sendMessage = (req, res) => {
-  res.render('send', { title: 'Send Message' });
+  res.render('send', { title: 'Send Message', uid: req.params.uid });
 };
 
 exports.showMessage = (req, res) => {
-  res.render('screen', { title: 'EasyScreen' });
+  res.render('screen', { title: 'EasyScreen', uid: req.params.uid });
 };

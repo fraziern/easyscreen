@@ -1,0 +1,41 @@
+.pen-hand-bg {
+  background: url("../images/marker-hand.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #dcb4a6;
+}
+
+.welcome-block {
+  text-align: center;
+  margin-top: 80px;
+
+  h1 {
+    font-size: 70px;
+    font-family: 'Lobster', cursive;
+    margin-bottom: .33em;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-family: 'Zilla Slab Highlight', cursive;
+  }
+}
+
+.welcome-button-block {
+  text-align: center;
+  margin-top: 70px;
+
+  .button {
+    background-color: #eb1120;
+    color: rgb(245, 240, 225);
+    padding: 7px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

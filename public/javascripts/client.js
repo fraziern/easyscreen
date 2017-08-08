@@ -1,4 +1,8 @@
+/*global io _uid */
 var socket = io();
+
+// _uid is passed from pug, passed in turn from URL params
+var uid = _uid || 'anonymous';
 
 var form = document.getElementsByClassName('form-send')[0];
 var txt = document.getElementById('txt');
@@ -6,7 +10,7 @@ var msgList = document.getElementById('message-list');
 
 form.addEventListener('submit', function(e) {
   e.preventDefault();
-  socket.emit('message', txt.value);
+  socket.emit('message', { uid, body: txt.value });
 
   // add to list of messages
   let li = document.createElement('li');
@@ -18,7 +22,7 @@ form.addEventListener('submit', function(e) {
 
   li.addEventListener('click', function(e) {
     e.preventDefault();
-    socket.emit('message', li.textContent);
+    socket.emit('message', { uid, body: li.textContent });
   });
 
   msgList.appendChild(li);

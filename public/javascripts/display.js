@@ -1,6 +1,12 @@
-/*global io */
-var socket = io();
+/*global io _uid */
+// connect to socket.io, join room
+let socket = io();
+let room = _uid;
+socket.on('connect', function() {
+  socket.emit('room', room);
+});
 
+// textFitHeight will adjust text height to fill window
 Element.prototype.textFitHeight = function(_options) {
   const options = _options || {
     min: 0,
@@ -26,8 +32,8 @@ Element.prototype.textFitHeight = function(_options) {
   window.addEventListener('orientationchange', shrinker);
 };
 
+// localStorage detection; from developer.mozilla.org
 function storageAvailable(type) {
-  // localStorage detection; from developer.mozilla.org
   try {
     var storage = window[type],
       x = '__storage_test__';
