@@ -44,13 +44,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Sessions allow us to store data on visitors from request to request
 // This keeps users logged in and allows us to send flash messages
+const sessionStore = new MongoStore({
+  mongooseConnection: mongoose.connection
+});
+
 app.use(
   session({
     secret: process.env.SECRET,
     key: process.env.KEY,
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({ mongooseConnection: mongoose.connection })
+    store: sessionStore
   })
 );
 
@@ -95,4 +99,5 @@ if (app.get('env') === 'development') {
 // production error handler
 app.use(errorHandlers.productionErrors);
 
-module.exports = app;
+exports.app = app;
+exports.sessionStore = sessionStore;

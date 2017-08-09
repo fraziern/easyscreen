@@ -22,7 +22,7 @@ require('./models/User');
 
 // Start our app! (we have to require app after declaring mongoose models)
 
-var app = require('./app');
+var app = require('./app').app;
 app.set('port', process.env.PORT || 3000);
 const server = app.listen(app.get('port'), () => {
   console.log(`Express running → PORT ${server.address().port}`);
