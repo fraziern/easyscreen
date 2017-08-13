@@ -23,7 +23,7 @@
     "express": "~4.15.2",
     "express-session": "^1.15.4",
     "md5": "^2.2.1",
-    "mongoose": "^4.11.4",
+    "mongoose": "^4.10.8",
     "mongoose-mongodb-errors": "0.0.2",
     "morgan": "~1.8.1",
     "node-sass": "^4.5.3",

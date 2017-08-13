@@ -1,5 +1,21 @@
 /*client CSS*/
 
+.message-list-container {
+  margin-top: $menu-button-height;
+}
+
+.message-list {
+  list-style: none;
+  font-size: 24px;
+
+  .li--shrink {
+    background: $yellow;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: inline-block;
+  }
+}
+
 .form-send {
   position: fixed;
   bottom: 0;
@@ -13,17 +29,5 @@
     height: 70px;
     padding-left: 10px;
     font-size: inherit;
-  }
-}
-
-.message-list {
-  list-style: none;
-  font-size: 24px;
-
-  .li--shrink {
-    background: $yellow;
-    padding: 5px 10px;
-    cursor: pointer;
-    display: inline-block;
   }
 }

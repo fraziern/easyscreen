@@ -531,6 +531,18 @@ template {
     color: #fb9d23; }
 
 /*client CSS*/
+.message-list-container {
+  margin-top: 30px; }
+
+.message-list {
+  list-style: none;
+  font-size: 24px; }
+  .message-list .li--shrink {
+    background: #f5f492;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: inline-block; }
+
 .form-send {
   position: fixed;
   bottom: 0;
@@ -543,15 +555,6 @@ template {
     height: 70px;
     padding-left: 10px;
     font-size: inherit; }
-
-.message-list {
-  list-style: none;
-  font-size: 24px; }
-  .message-list .li--shrink {
-    background: #f5f492;
-    padding: 5px 10px;
-    cursor: pointer;
-    display: inline-block; }
 
 .message-container {
   display: block;
@@ -596,6 +599,79 @@ template {
     transition: all .2s ease-in-out; }
     .welcome-button-block .button:hover {
       transform: scale(1.1); }
+
+.menu__list {
+  list-style: none;
+  padding: 10px;
+  display: inline-block; }
+
+.menu__list .menu__list-item {
+  margin: 0 5px;
+  display: inline-block; }
+
+.menu-button {
+  width: 50px;
+  height: 30px;
+  background: rgba(10, 10, 10, 0.1);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  border-radius: 0 0 10px 10px;
+  font-size: 24px;
+  line-height: 12px;
+  text-align: center; }
+
+.menu {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(10, 10, 10, 0.1); }
+
+.menu-container {
+  position: fixed;
+  z-index: 300;
+  height: 70px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(-40px);
+  transition: all 0.2s ease-in; }
+
+.menu-container.is-active {
+  transform: translateY(0); }
+  .menu-container.is-active > * {
+    background-color: rgba(167, 183, 235, 0.8); }
+
+.menu__close {
+  display: inline-block;
+  border: none;
+  margin: 0 5px;
+  background: green;
+  color: white;
+  height: 60px;
+  cursor: pointer;
+  position: relative; }
+
+.mask {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s; }
+
+.mask.is-active {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  transition: opacity 0.3s; }
 
 * {
   margin: 0;

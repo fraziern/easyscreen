@@ -2,7 +2,7 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/css/styles.css')
+    link(rel="stylesheet", href="/css/styles.css")
     meta(name="viewport" content="width=device-width, initial-scale=1")
   body
     block messages
@@ -14,7 +14,17 @@ html
               .flash(class=`flash--${category}`)
                 p.flash__text!= message
                 button.flash__remove(onClick="this.parentElement.remove()") &times;
-                  
-    block content
+    
+    block menu
+      .menu-container#menu-container
+        .menu-button#menu-button ...
+        .menu
+          ul.menu__list
+            li.menu__list-item Logout
       
-    block scripts
+    .mask#mask              
+    block content
+    
+      
+block scripts
+script(src="/javascripts/dropdown.js")      

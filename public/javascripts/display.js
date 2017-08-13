@@ -1,10 +1,4 @@
 /*global io _uid */
-// connect to socket.io, join room
-let socket = io();
-let room = _uid;
-socket.on('connect', function() {
-  socket.emit('room', room);
-});
 
 // textFitHeight will adjust text height to fill window
 Element.prototype.textFitHeight = function(_options) {
@@ -59,7 +53,16 @@ function storageAvailable(type) {
 }
 
 // main
-window.onload = function() {
+// TODO tie storage to uid
+
+const app_display = function() {
+  // connect to socket.io, join room
+  let socket = io();
+  let room = _uid;
+  socket.on('connect', function() {
+    socket.emit('room', room);
+  });
+
   let localstorage = null;
   const messageNode = document.getElementById('message');
 
@@ -77,3 +80,5 @@ window.onload = function() {
     if (localstorage) localstorage.setItem('msg', msg);
   });
 };
+
+document.addEventListener('DOMContentLoaded', app_display);

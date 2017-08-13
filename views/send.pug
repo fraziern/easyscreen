@@ -2,13 +2,12 @@ extends layout
 
 block content
   .inner
-    ul.message-list#message-list
+    .message-list-container
+      ul.message-list#message-list
     form.form-send(action="")
       input.form-send__input#txt(type="text" name="message" placeholder="Type a message..." autofocus)
 
 
 block scripts
-  script.
-    _uid="#{uid}";
   script(src="/socket.io/socket.io.js")
   script(src="/javascripts/client.js")

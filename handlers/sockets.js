@@ -1,5 +1,5 @@
 var sanitizeHtml = require('sanitize-html');
-var sessionStore = require('../app').sessionStore;
+var sessionStore = require('./sessionStore');
 var passportSocketIo = require('passport.socketio');
 
 const sockets = function(server) {
@@ -16,9 +16,16 @@ const sockets = function(server) {
   );
 
   io.on('connection', function(socket) {
-    console.log('socket user: ' + socket.request.user);
+    // get logged in name
+    const shortname = socket.request.user && socket.request.user.shortname;
+    const uid = shortname || 'anonymous';
+
     socket.on('room', function(room) {
-      socket.join(room);
+      if (room === uid) {
+        socket.join(room);
+      } else {
+        console.log(`Cannot join room! UID: ${uid} Room: ${room}`);
+      }
     });
 
     socket.on('message', function(data) {
@@ -26,8 +33,8 @@ const sockets = function(server) {
         allowedTags: [],
         allowedAttributes: []
       });
-      console.log(`message: ${cleanMsg} from: ${data.uid}`);
-      socket.to(data.uid).emit('message', cleanMsg);
+      console.log(`message: ${cleanMsg} from: ${uid}`);
+      socket.to(uid).emit('message', cleanMsg);
     });
   });
 };

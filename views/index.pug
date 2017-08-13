@@ -1,10 +1,15 @@
-extends layout
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/styles.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
 
-block content
-  .pen-hand-bg.full-height
-    .inner.center.vertical-stack
-      .welcome-block
-        h1 EasyScreen
-        h2 Remote real-time closed captioning
-      .welcome-button-block
-        a(href="/login"): button.button Log In
+  body
+    .pen-hand-bg.full-height
+      .inner.center.vertical-stack
+        .welcome-block
+          h1 EasyScreen
+          h2 Remote real-time closed captioning
+        .welcome-button-block
+          a(href="/login"): button.button Log In

@@ -13,6 +13,7 @@ const flash = require('connect-flash');
 const sassMiddleware = require('node-sass-middleware');
 const errorHandlers = require('./handlers/errorHandlers');
 const helpers = require('./helpers');
+const sessionStore = require('./handlers/sessionStore');
 require('./handlers/passport');
 
 const app = express();
@@ -44,10 +45,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Sessions allow us to store data on visitors from request to request
 // This keeps users logged in and allows us to send flash messages
-const sessionStore = new MongoStore({
-  mongooseConnection: mongoose.connection
-});
-
 app.use(
   session({
     secret: process.env.SECRET,
@@ -99,5 +96,4 @@ if (app.get('env') === 'development') {
 // production error handler
 app.use(errorHandlers.productionErrors);
 
-exports.app = app;
-exports.sessionStore = sessionStore;
+module.exports = app;
